@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+    <script src="Class.js"></script>
+    <script src="Script.js"></script>
+    <style>
+      canvas {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 50px;
+      }
+
+      h1 {
+        padding: 20px;
+        text-align: center;
+      }
+
+      body {
+        font-family: "Noto Sans", sans-serif !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <h1>Programming II Gyumri</h1>
+        </tr>
+        <tr>
+          <h1>Slavik Manukyan</h1>
+        </tr>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Color</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td scope="row" style="background-color: green"></td>
+          <td>
+            Green is grass, which multiplies once in 5 ticks, dies when grass
+            eater eats him.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td scope="row" style="background-color: yellow"></td>
+          <td>
+            Yellow is grass eater, which multiplies after eating 4 grass and
+            dies after his energy drops below 0.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td scope="row" style="background-color: red"></td>
+          <td>
+            Red is predator, which multiplies after eating 5 grass, or 4 grass
+            eaters, dies after his energy drops below 0.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td scope="row" style="background-color: #c58c85"></td>
+          <td>
+            This one is human, who multiplies after eating 5 grass, or 4 grass
+            eaters, can't eat predators. Dies after his energy drops below 0.
+            Eats grass or grass eaters depending on amount of energy (energy
+            less than 30 - grass, more - grass eater).
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td scope="row" style="background-color: purple"></td>
+          <td>
+            Purple is Hermit Mushroom, which destroys any living creature (grass
+            eater/predator, except human) he sees in nearby 8 fields. Can't
+            multiply or die. Finally works after a lot of sufferings :)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>P.S. Didnt had enough time to work on pictures :(</p>
+
+    <br /><br />
+
+    <div style="margin-left: 35%">
+      <input
+        class="btn btn-success"
+        type="button"
+        value="Create grass"
+        id="createGr"
+      />
+      <input
+        class="btn btn-warning"
+        type="button"
+        value="Create grass eater"
+        id="createGrEat"
+      />
+      <input
+        class="btn btn-danger"
+        type="button"
+        value="Create predator"
+        id="createPred"
+      />
+      <input
+        class="btn btn-primary"
+        type="button"
+        value="Create human"
+        id="createHum"
+      />
+    </div>
+
+    <br /><br />
+
+    <div style="margin-left: 43%;">
+        <h2 style="color: green;" id="grCount"></h2>
+        <h2 style="color: #bd903c" id="grEatCount"></h2>
+        <h2 style="color: red" id="allEatCount"></h2>
+        <h2 style="color: #c58c85" id="humCount"></h2>
+        <h2 style="color: purple;" id="mushCount"></h2>
+    </div>
+
+    <br><br>
+  </body>
+</html>
