@@ -1,3 +1,4 @@
+//This is a test, dont pay attention
 class Grass {
   constructor(x, y) {
     this.x = x;
