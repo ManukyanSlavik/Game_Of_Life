@@ -1,5 +1,5 @@
 //This is a test, dont pay attention
-//Same here
+//Dont pay attention here too
 class Grass {
   constructor(x, y) {
     this.x = x;
