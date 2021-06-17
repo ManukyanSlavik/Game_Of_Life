@@ -1,4 +1,6 @@
-class HermitMushroom extends Creature{
+let Creature = require("./Creature");
+
+module.exports = class HermitMushroom extends Creature{
     constructor(x, y) {
       super(x, y);
     }

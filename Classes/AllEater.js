@@ -1,4 +1,6 @@
-class AllEater extends Creature{
+let Creature = require("./Creature");
+
+module.exports = class AllEater extends Creature{
     constructor(x, y) {
       super(x, y);
       this.energy = 20;
