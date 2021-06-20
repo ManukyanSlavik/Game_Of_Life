@@ -18,8 +18,8 @@ module.exports = class Grass extends Creature{
   
     Multiply() {
       this.multiply++;
-      var cells = super.FindEmptyCells();
-      var exact = random(cells);
+      var emptyCells = super.FindEmptyCells();
+      var exact = emptyCells[Math.floor(Math.random * emptyCells.length)];
       if (exact && this.multiply > 5) {
         let x = exact[0];
         let y = exact[1];

@@ -7,8 +7,8 @@ module.exports = class GrassEater extends Creature{
     }
   
     Mul() {
-      let found = super.FindEmptyCells();
-      let exact = random(found);
+      let emptyCells = super.FindEmptyCells();
+      let exact = emptyCells[Math.floor(Math.random() * emptyCells.length)];
   
       if (exact && this.energy > 8) {
         let x = exact[0];
@@ -24,7 +24,7 @@ module.exports = class GrassEater extends Creature{
   
     Eat() {
       let found = super.ChooseCell(1);
-      let exact = random(found);
+      let exact = found[Math.floor(Math.random() * found.length)];
   
       if (exact) {
         this.energy += 3;
@@ -52,8 +52,8 @@ module.exports = class GrassEater extends Creature{
     }
   
     Move() {
-      let found = super.FindEmptyCells();
-      let exact = random(found);
+      let emptyCells = super.FindEmptyCells();
+      let exact = emptyCells[Math.floor(Math.random() * emptyCells.length)];
   
       if (exact) {
         let x = exact[0];

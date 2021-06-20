@@ -7,8 +7,8 @@ module.exports = class Human extends Creature{
     }
   
     Mul() {
-      let found = super.FindEmptyCells();
-      let exact = random(found);
+      let emptyCells = super.FindEmptyCells();
+      let exact = emptyCells[Math.floor(Math.random() * emptyCells.length)];
   
       if (exact && this.energy > 8) {
         let x = exact[0];
@@ -24,7 +24,7 @@ module.exports = class Human extends Creature{
   
     Eat() {
       let found = super.ChooseConcreteCells(1, 2);
-      let exact = random(found);
+      let exact = found[Math.floor(Math.random() * found.length)];
   
       if (exact && matrix[exact[1]][exact[0]] == 1 && this.energy < 30) {
         this.energy += 2;
@@ -73,8 +73,8 @@ module.exports = class Human extends Creature{
   
     Move() {
       super.GetNewCoordinates();
-      var found = super.FindEmptyCells();
-      var exact = random(found);
+      var emptyCells = super.FindEmptyCells();
+      var exact = emptyCells[Math.floor(Math.random() * emptyCells.length)];
   
       if (exact) {
         let x = exact[0];
