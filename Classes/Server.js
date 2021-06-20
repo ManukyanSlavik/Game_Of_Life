@@ -4,6 +4,12 @@ var server = require("http").Server(app);
 var io = require("socket.io")(server);
 var fs = require("fs");
 
+var Grass = require("./Grass");
+var GrassEater = require("./GrassEater");
+var AllEater = require("./AllEater");
+var Human = require("./Human");
+var Mushroom = require("./HermitMushroom");
+
 app.use(express.static("."));
 
 app.get('/', function (req, res) {
@@ -12,6 +18,12 @@ app.get('/', function (req, res) {
 server.listen(3000);
 
 //
+
+var grassArr = [];
+var grassEaterArr = [];
+var allEaterArr = [];
+var humanArr = [];
+var mushroomArr = [];
 
 function CreateMatrix(m, n) {
     let matrix = [];
