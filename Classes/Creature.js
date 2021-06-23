@@ -33,7 +33,7 @@ module.exports = class Creature{
         for (var i in this.directions) {
           var x = this.directions[i][0];
           var y = this.directions[i][1];
-          if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
+          if (x >= 0 && x < 60 && y >= 0 && y < 60) {
             if (matrix[y][x] == 0) {
               found.push(this.directions[i]);
             }
@@ -49,7 +49,7 @@ module.exports = class Creature{
         for (var i in this.directions) {
           var x = this.directions[i][0];
           var y = this.directions[i][1];
-          if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
+          if (x >= 0 && x < 60 && y >= 0 && y < 60) {
             if (matrix[y][x] == char) {
               found.push(this.directions[i]);
             }
@@ -67,7 +67,7 @@ module.exports = class Creature{
           let x = this.directions[i][0];
           let y = this.directions[i][1];
     
-          if (y < matrix.length && y >= 0 && x < matrix[0].length && x >= 0) {
+          if (y < 60 && y >= 0 && x < 60 && x >= 0) {
             if (matrix[y][x] == char1 || matrix[y][x] == char2) {
               result.push(this.directions[i]);
             }

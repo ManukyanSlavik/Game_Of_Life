@@ -2,7 +2,6 @@ var socket = io();
 
 var side = 20;
 
-var matrix = [];
 
 // window.onload = function () {
 //   let createGr = document.getElementById("createGr");
@@ -51,27 +50,27 @@ var matrix = [];
 // };
 
 function setup() {
-  createCanvas(matrix[0].length * side + 1, matrix.length * side + 1);
+  createCanvas((60 * side) + 1, (60 * side) + 1);
   background("#acacac");
 
   // for (var y = 0; y < matrix.length; y++) {
   //   for (var x = 0; x < matrix[y].length; x++) {
-  //     if (matrix[y][x] == 1) {
-  //       var gr = new Grass(x, y);
-  //       grassArr.push(gr);
-  //     } else if (matrix[y][x] == 2) {
-  //       var grEater = new GrassEater(x, y);
-  //       grassEaterArr.push(grEater);
-  //     } else if (matrix[y][x] == 3) {
-  //       var allEater = new AllEater(x, y);
-  //       allEaterArr.push(allEater);
-  //     } else if (matrix[y][x] == 4) {
-  //       var human = new Human(x, y);
-  //       humanArr.push(human);
-  //     } else if (matrix[y][x] == 5) {
-  //       var mushroom = new HermitMushroom(x, y);
-  //       mushroomArr.push(mushroom);
-  //     }
+      // if (matrix[y][x] == 1) {
+      //   var gr = new Grass(x, y);
+      //   grassArr.push(gr);
+      // } else if (matrix[y][x] == 2) {
+      //   var grEater = new GrassEater(x, y);
+      //   grassEaterArr.push(grEater);
+      // } else if (matrix[y][x] == 3) {
+      //   var allEater = new AllEater(x, y);
+      //   allEaterArr.push(allEater);
+      // } else if (matrix[y][x] == 4) {
+      //   var human = new Human(x, y);
+      //   humanArr.push(human);
+      // } else if (matrix[y][x] == 5) {
+      //   var mushroom = new HermitMushroom(x, y);
+      //   mushroomArr.push(mushroom);
+      // }
   //   }
   // }
 }
