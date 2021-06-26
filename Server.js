@@ -4,11 +4,11 @@ var server = require("http").Server(app);
 var io = require("socket.io")(server);
 var fs = require("fs");
 
-var Grass = require("./Classes/Grass");
-var GrassEater = require("./Classes/GrassEater");
-var AllEater = require("./Classes/AllEater");
-var Human = require("./Classes/Human");
-var Mushroom = require("./Classes/HermitMushroom");
+Grass = require("./Classes/Grass");
+GrassEater = require("./Classes/GrassEater");
+AllEater = require("./Classes/AllEater");
+Human = require("./Classes/Human");
+Mushroom = require("./Classes/HermitMushroom");
 
 app.use(express.static("."));
 
@@ -19,14 +19,14 @@ server.listen(3000);
 
 /*-----------------------------------------------------------------*/
 
-var grassArr = [];
-var grassEaterArr = [];
-var allEaterArr = [];
-var humanArr = [];
-var mushroomArr = [];
+grassArr = [];
+grassEaterArr = [];
+allEaterArr = [];
+humanArr = [];
+mushroomArr = [];
+matrix = [];
 
 function CreateMatrix(m, n) {
-  let matrix = [];
   for (let i = 0; i < m; i++) {
     matrix.push([]);
     for (let j = 0; j < n; j++) {
@@ -47,11 +47,9 @@ function CreateMatrix(m, n) {
   AddCharacter(3, 10);
   AddCharacter(4, 10);
   AddCharacter(5, 10);
-
-  return matrix;
 }
 
-let matrix = CreateMatrix(60, 60);
+CreateMatrix(60, 60);
 
 io.sockets.emit("send matrix", matrix);
 
@@ -100,7 +98,7 @@ function Play(){
   io.sockets.emit("send matrix", matrix);
 }
 
-setInterval(Play, 1000);
+setInterval(Play, 100);
 
 io.on("connection", function(){
   CreateObject(matrix);

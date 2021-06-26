@@ -8,7 +8,7 @@ module.exports = class AllEater extends Creature{
   
     Mul() {
       let found = super.FindEmptyCells();
-      let exact = random(found);
+      let exact = found[Math.floor(Math.random() * found.length)];
   
       if (exact && this.energy > 8) {
         let x = exact[0];
@@ -24,7 +24,7 @@ module.exports = class AllEater extends Creature{
   
     Eat() {
       let found = super.ChooseConcreteCells(1, 2);
-      let exact = random(found);
+      let exact = found[Math.floor(Math.random() * found.length)];
   
       if (exact && matrix[exact[1]][exact[0]] == 1) {
         this.energy += 2;
@@ -97,7 +97,7 @@ module.exports = class AllEater extends Creature{
   
     Move() {
       let foundEmpty = super.FindEmptyCells();
-      let exact = random(foundEmpty);
+      let exact = foundEmpty[Math.floor(Math.random() * foundEmpty.length)];
   
       if (exact) {
         let x = exact[0];
