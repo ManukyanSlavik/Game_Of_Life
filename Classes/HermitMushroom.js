@@ -17,7 +17,6 @@ module.exports = class HermitMushroom extends Creature{
           if (matrix[y][x] == 2) {
             for (let j = 0; j < grassEaterArr.length; j++) {
               if (grassEaterArr[j].x == x && grassEaterArr[j].y == y) {
-                console.log("Destroying grass eater.");
                 grassEaterArr.splice(j, 1);
                 break;
               }
@@ -25,7 +24,6 @@ module.exports = class HermitMushroom extends Creature{
           } else if (matrix[y][x] == 3) {
             for (let j = 0; j < allEaterArr.length; j++) {
               if (allEaterArr[j].x == x && allEaterArr[j].y == y) {
-                console.log("Destroying all eater.");
                 allEaterArr.splice(j, 1);
                 break;
               }

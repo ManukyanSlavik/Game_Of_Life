@@ -1,57 +1,21 @@
+/*
+/--------------------------------------/
+  No any logic here, only drawing
+/--------------------------------------/
+*/
+
 var socket = io();
 var side = 20;
-
-
-// window.onload = function () {
-//   let createGr = document.getElementById("createGr");
-
-//   createGr.onclick = function () {
-//     let x = Math.floor(Math.random() * matrix[0].length);
-//     let y = Math.floor(Math.random() * matrix.length);
-
-//     matrix[y][x] = 1;
-//     let gr = new Grass(x, y);
-//     grassArr.push(gr);
-//   };
-
-//   let createGrEat = document.getElementById("createGrEat");
-
-//   createGrEat.onclick = function CreateGrassEater() {
-//     let x = Math.floor(Math.random() * matrix[0].length);
-//     let y = Math.floor(Math.random() * matrix.length);
-
-//     matrix[y][x] = 2;
-//     let grEater = new GrassEater(x, y);
-//     grassEaterArr.push(grEater);
-//   };
-
-//   let createPred = document.getElementById("createPred");
-
-//   createPred.onclick = function CreatePredator() {
-//     let x = Math.floor(Math.random() * matrix[0].length);
-//     let y = Math.floor(Math.random() * matrix.length);
-
-//     matrix[y][x] = 3;
-//     let allEater = new AllEater(x, y);
-//     allEaterArr.push(allEater);
-//   };
-
-//   let createHum = document.getElementById("createHum");
-
-//   createHum.onclick = function CreateHuman() {
-//     let x = Math.floor(Math.random() * matrix[0].length);
-//     let y = Math.floor(Math.random() * matrix.length);
-
-//     matrix[y][x] = 4;
-//     let human = new Human(x, y);
-//     humanArr.push(human);
-//   };
-// };
+//var Weather;
 
 function setup() {
-  createCanvas((60 * side) + 1, (60 * side) + 1);
+  createCanvas(60 * side + 1, 60 * side + 1);
   background("#acacac");
 }
+
+// socket.on("Weather change", function (data) {
+//   Weather = data;
+// });
 
 function risuy(matrix) {
   for (var y = 0; y < matrix.length; y++) {
@@ -75,6 +39,25 @@ function risuy(matrix) {
   }
 }
 
-setInterval(function(){
+setInterval(function () {
   socket.on("send matrix", risuy);
 }, 100);
+
+/*
+/--------------------------------------/
+  Creation buttons triggering this functions
+/--------------------------------------/
+*/
+
+function CreateGrass() {
+  socket.emit("Create grass");
+}
+function CreateGrEater() {
+  socket.emit("Create grEater");
+}
+function CreatePred() {
+  socket.emit("Create pred");
+}
+function CreateHuman() {
+  socket.emit("Create human");
+}
