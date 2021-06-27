@@ -121,22 +121,22 @@ io.on("connection", function () {
   CreateObject(matrix);
 });
 
-// function WeatherChange() {
-//   if (Weather == "Winter") {
-//     Weather = "Spring"
-//   }
-//   else if (Weather == "Spring") {
-//     Weather = "Summer"
-//   }
-//   else if (Weather == "Summer") {
-//     Weather = "Autumn"
-//   }
-//   else if (Weather == "Autumn") {
-//     Weather = "Winter"
-//   }
-//   io.sockets.emit('Weather change', Weather)
-// }
-// setInterval(WeatherChange, 5000);
+function WeatherChange() {
+  if (Weather == "Winter") {
+    Weather = "Spring"
+  }
+  else if (Weather == "Spring") {
+    Weather = "Summer"
+  }
+  else if (Weather == "Summer") {
+    Weather = "Autumn"
+  }
+  else if (Weather == "Autumn") {
+    Weather = "Winter"
+  }
+  io.sockets.emit('Weather change', Weather)
+}
+setInterval(WeatherChange, 5000);
 
 /*
 /--------------------------------------/

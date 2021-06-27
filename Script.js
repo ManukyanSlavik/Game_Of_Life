@@ -6,16 +6,16 @@
 
 var socket = io();
 var side = 20;
-//var Weather;
+var Weather;
 
 function setup() {
   createCanvas(60 * side + 1, 60 * side + 1);
   background("#acacac");
 }
 
-// socket.on("Weather change", function (data) {
-//   Weather = data;
-// });
+socket.on("Weather change", function (data) {
+  Weather = data;
+});
 
 function risuy(matrix) {
   for (var y = 0; y < matrix.length; y++) {
@@ -23,7 +23,20 @@ function risuy(matrix) {
       if (matrix[y][x] == 0) {
         fill("#acacac");
       } else if (matrix[y][x] == 1) {
-        fill("green");
+        switch(Weather){
+          case "Winter":
+            fill("white");
+            break;
+          case "Spring":
+            fill("green");
+            break;
+          case "Summer":
+            fill("#366801");
+            break;
+          case "Autumn":
+            fill("#FF9705");
+            break;
+        }
       } else if (matrix[y][x] == 2) {
         fill("yellow");
       } else if (matrix[y][x] == 3) {
