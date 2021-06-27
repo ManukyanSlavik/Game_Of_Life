@@ -6,7 +6,7 @@
 
 var socket = io();
 var side = 20;
-var Weather;
+var Weather = "";
 
 function setup() {
   createCanvas(60 * side + 1, 60 * side + 1);
